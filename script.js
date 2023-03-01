@@ -50,10 +50,10 @@ while (userInput !== `CLOSE`){
         tasks.push(newTask);
         alert(newTask + ' has been added');
     } else if (userInput == `REMOVE`){
-        num = prompt(`Please enter a number to remove: ` + showTasks);
-        while (num < 1 || num > c){
+        num = parseInt(prompt(`Please enter a number to remove: ` + showTasks));
+        while (!num || num < 1 || num > c){
             alert("Not a valid entry");
-            num = prompt(`Please enter a number to remove: ` + showTasks);
+            num = parseInt(prompt(`Please enter a number to remove: ` + showTasks));
         }
         num--;
         removed = tasks.splice(num, 1);
